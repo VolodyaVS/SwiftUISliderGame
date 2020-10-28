@@ -13,6 +13,10 @@
 		FF286DE425486DA100BDCDFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF286DE325486DA100BDCDFF /* Assets.xcassets */; };
 		FF286DE725486DA100BDCDFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF286DE625486DA100BDCDFF /* Preview Assets.xcassets */; };
 		FF286DEA25486DA100BDCDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF286DE825486DA100BDCDFF /* LaunchScreen.storyboard */; };
+		FF286DFB2548709500BDCDFF /* GameUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF286DFA2548709500BDCDFF /* GameUISlider.swift */; };
+		FF286DFF2548740E00BDCDFF /* GameSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF286DFE2548740E00BDCDFF /* GameSlider.swift */; };
+		FF286E0A2548852200BDCDFF /* LabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF286E092548852200BDCDFF /* LabelValue.swift */; };
+		FF286E0D2548899000BDCDFF /* ButtonTapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF286E0C2548899000BDCDFF /* ButtonTapped.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		FF286DE625486DA100BDCDFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF286DE925486DA100BDCDFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF286DEB25486DA100BDCDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF286DFA2548709500BDCDFF /* GameUISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUISlider.swift; sourceTree = "<group>"; };
+		FF286DFE2548740E00BDCDFF /* GameSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSlider.swift; sourceTree = "<group>"; };
+		FF286E092548852200BDCDFF /* LabelValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelValue.swift; sourceTree = "<group>"; };
+		FF286E0C2548899000BDCDFF /* ButtonTapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTapped.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +64,10 @@
 		FF286DDC25486D9F00BDCDFF /* SwiftUISliderGame */ = {
 			isa = PBXGroup;
 			children = (
-				FF286DDD25486D9F00BDCDFF /* AppDelegate.swift */,
-				FF286DDF25486D9F00BDCDFF /* SceneDelegate.swift */,
-				FF286DE125486D9F00BDCDFF /* ContentView.swift */,
-				FF286DE325486DA100BDCDFF /* Assets.xcassets */,
-				FF286DE825486DA100BDCDFF /* LaunchScreen.storyboard */,
-				FF286DEB25486DA100BDCDFF /* Info.plist */,
+				FF286E05254874B700BDCDFF /* Views */,
+				FF286E07254874C100BDCDFF /* Storyboards */,
+				FF286E022548748E00BDCDFF /* SupportingFiles */,
+				FF286E012548743B00BDCDFF /* Sources */,
 				FF286DE525486DA100BDCDFF /* Preview Content */,
 			);
 			path = SwiftUISliderGame;
@@ -73,6 +79,44 @@
 				FF286DE625486DA100BDCDFF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF286E012548743B00BDCDFF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FF286DE325486DA100BDCDFF /* Assets.xcassets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FF286E022548748E00BDCDFF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FF286DDD25486D9F00BDCDFF /* AppDelegate.swift */,
+				FF286DDF25486D9F00BDCDFF /* SceneDelegate.swift */,
+				FF286DEB25486DA100BDCDFF /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		FF286E05254874B700BDCDFF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF286DE125486D9F00BDCDFF /* ContentView.swift */,
+				FF286DFE2548740E00BDCDFF /* GameSlider.swift */,
+				FF286DFA2548709500BDCDFF /* GameUISlider.swift */,
+				FF286E092548852200BDCDFF /* LabelValue.swift */,
+				FF286E0C2548899000BDCDFF /* ButtonTapped.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FF286E07254874C100BDCDFF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FF286DE825486DA100BDCDFF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF286E0D2548899000BDCDFF /* ButtonTapped.swift in Sources */,
+				FF286E0A2548852200BDCDFF /* LabelValue.swift in Sources */,
 				FF286DDE25486D9F00BDCDFF /* AppDelegate.swift in Sources */,
 				FF286DE025486D9F00BDCDFF /* SceneDelegate.swift in Sources */,
+				FF286DFB2548709500BDCDFF /* GameUISlider.swift in Sources */,
+				FF286DFF2548740E00BDCDFF /* GameSlider.swift in Sources */,
 				FF286DE225486D9F00BDCDFF /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +338,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUISliderGame/Preview Content\"";
 				DEVELOPMENT_TEAM = JBMRXJPY8V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SwiftUISliderGame/Info.plist;
+				INFOPLIST_FILE = SwiftUISliderGame/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,7 +359,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUISliderGame/Preview Content\"";
 				DEVELOPMENT_TEAM = JBMRXJPY8V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SwiftUISliderGame/Info.plist;
+				INFOPLIST_FILE = SwiftUISliderGame/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
