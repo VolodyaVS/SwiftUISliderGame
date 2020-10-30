@@ -10,7 +10,9 @@ import SwiftUI
 struct GameUISlider: UIViewRepresentable {
     
     @Binding var value: Double
-    @Binding var alpha: Double
+    
+    let alpha: Int
+    let color: UIColor
     
     func makeUIView(context: Context) -> UISlider {
         let slider = UISlider(frame: .zero)
@@ -20,7 +22,6 @@ struct GameUISlider: UIViewRepresentable {
         slider.tintColor = .brown
         slider.thumbTintColor = .brown
         slider.value = Float(value)
-        slider.alpha = CGFloat(alpha)
         
         slider.addTarget(
             context.coordinator,
@@ -32,34 +33,32 @@ struct GameUISlider: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UISlider, context: Context) {
+        uiView.thumbTintColor = color.withAlphaComponent(CGFloat(alpha) / 100)
         uiView.value = Float(value)
         
     }
     
     func makeCoordinator() -> GameUISlider.Coordinator {
-        Coordinator(value: $value, alpha: $alpha)
+        Coordinator(value: $value)
     }
 }
 
 extension GameUISlider {
     class Coordinator: NSObject {
         @Binding var value: Double
-        @Binding var alpha: Double
         
-        init(value: Binding<Double>, alpha: Binding<Double>) {
+        init(value: Binding<Double>) {
             self._value = value
-            self._alpha = alpha
         }
         
         @objc func valueChanged(_ sender: UISlider) {
             value = Double(sender.value)
-            alpha = Double(sender.alpha)
         }
     }
 }
 
 struct GameUISlider_Previews: PreviewProvider {
     static var previews: some View {
-        GameUISlider(value: .constant(70), alpha: .constant(0.3))
+        GameUISlider(value: .constant(70), alpha: 100, color: UIColor.brown)
     }
 }

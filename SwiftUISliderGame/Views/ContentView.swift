@@ -11,22 +11,23 @@ struct ContentView: View {
     @State private var currentValue = 0.0
     @State private var targetValue = 0
     @State private var showAlert = false
-    @State private var alphaSlider = 0.3
     
     var body: some View {
         VStack(spacing: 20) {
             GameSlider(sliderValue: $currentValue,
-                       targetValue: $targetValue,
-                       alpha: $alphaSlider)
+                       targetValue: targetValue,
+                       alpha: computeScore(),
+                       color: .brown)
+            
             ButtonTapped(showAlert: $showAlert,
                          title: "Проверь меня!",
-                         action: { computeScore() },
-                         score: computeScore() )
+                         action: { showAlert = true },
+                         score: computeScore())
+            
             ButtonTapped(showAlert: .constant(false),
                          title: "Начать заново!",
                          action: startGame,
                          score: 0)
-            
         }
     }
 }
@@ -39,7 +40,6 @@ extension ContentView {
     }
     
     private func computeScore() -> Int {
-        showAlert = true
         let difference = abs(targetValue - lround(currentValue))
         return 100 - difference
     }

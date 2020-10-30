@@ -9,15 +9,17 @@ import SwiftUI
 
 struct GameSlider: View {
     @Binding var sliderValue: Double
-    @Binding var targetValue: Int
-    @Binding var alpha: Double
+    
+    let targetValue: Int
+    let alpha: Int
+    let color: UIColor
     
     var body: some View {
         VStack {
             Text("Подвинь слайдер как можно ближе к: \(targetValue)")
             HStack {
                 LabelValue(value: 0)
-                GameUISlider(value: $sliderValue, alpha: $alpha)
+                GameUISlider(value: $sliderValue, alpha: alpha, color: color)
                 LabelValue(value: 100)
             }
         }
@@ -26,6 +28,11 @@ struct GameSlider: View {
 
 struct GameSlider_Previews: PreviewProvider {
     static var previews: some View {
-        GameSlider(sliderValue: .constant(100), targetValue: .constant(100), alpha: .constant(0.3))
+        GameSlider(
+            sliderValue: .constant(50),
+            targetValue: 100,
+            alpha: 100,
+            color: UIColor.brown
+        )
     }
 }
